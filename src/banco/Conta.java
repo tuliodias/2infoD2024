@@ -12,9 +12,36 @@ package banco;
 public class Conta {
 
     private int numero;
-    private String cliente;
     private double saldo;
     private double limite;
+    private int identificador;
+    private static int totalDeContas; // variável static pertece a classe
+    Cliente objCliente = new Cliente();
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public static int getTotalDeContas() {
+        return totalDeContas;
+    }
+
+    Conta() { // construtor padrão
+        Conta.totalDeContas = Conta.totalDeContas + 1;
+        this.identificador = Conta.totalDeContas;
+        System.out.println("Construindo uma conta");
+    }
+
+    Conta(double saldo) {
+        this(); //chama o construtor padrão
+        this.saldo = saldo;
+    }
+
+    Conta(double saldo, double limite, int numero) {
+        this(saldo); // chama o construtor acima
+        this.limite = limite;
+        this.numero = numero;
+    }
 
     public int getNumero() {
         return numero;
@@ -22,14 +49,6 @@ public class Conta {
 
     public void setNumero(int numero) {
         this.numero = numero;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente.toUpperCase();
     }
 
     public double getSaldo() {
@@ -58,15 +77,15 @@ public class Conta {
     public void deposita(double quantidade) {
         this.saldo = this.saldo + quantidade;
     }
-    
-    public void transfere(Conta destino, double quantidade){
-        if(this.saca(quantidade)){
+
+    public void transfere(Conta destino, double quantidade) {
+        if (this.saca(quantidade)) {
             destino.deposita(quantidade);
             System.out.println("Transferência realizada com sucesso!");
-        }else{
+        } else {
             System.out.println("Transferência não realizada");
         }
-          
+
     }
 
 }
