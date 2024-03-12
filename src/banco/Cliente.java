@@ -10,7 +10,7 @@ package banco;
  * @author tulio
  */
 public class Cliente {
-    private String nomeCliente, cpfCliente, dataNascimento;
+    private  String nomeCliente, cpfCliente, dataNascimento;
 
     public String getNomeCliente() {
         return nomeCliente;
