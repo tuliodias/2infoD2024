@@ -15,6 +15,10 @@ public class Funcionario {
         this.nome = nome;
     }
 
+    public Funcionario() {
+    }
+
+  
      
     private String nome, departamento, dataEntrada, RG;
     private double salario; 
