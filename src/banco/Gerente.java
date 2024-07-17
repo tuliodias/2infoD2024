@@ -14,6 +14,14 @@ public class Gerente extends Funcionario{
     private int senha;
     private int numeroDeFuncionariosGerenciados;
 
+    public Gerente(int senha, int numeroDeFuncionariosGerenciados, String nome) {
+        super(nome);
+        this.senha = senha;
+        this.numeroDeFuncionariosGerenciados = numeroDeFuncionariosGerenciados;
+    }
+
+   
+
        
     public int getSenha() {
         return senha;
@@ -42,5 +50,11 @@ public class Gerente extends Funcionario{
             return false;
         }
     }
+    
+    @Override
+      public double getBonificacao() {
+        return super.getBonificacao() +1000;
+    }
+
 
 }

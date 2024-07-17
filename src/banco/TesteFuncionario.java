@@ -11,8 +11,8 @@ package banco;
  */
 public class TesteFuncionario {
     public static void main(String[] args) {
-        Funcionario objFuncionario = new Funcionario("Tulio");
-        Funcionario objFuncionario2 = new Funcionario("Maria");
+        Funcionario objFuncionario = new Gerente(12, 110, "Tulio");
+        Funcionario objFuncionario2 = new Supervisor("Maria");
         
         //objFuncionario.setNome("Tulio");
         //objFuncionario2.setNome("Maria");

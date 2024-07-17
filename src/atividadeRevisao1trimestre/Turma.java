@@ -3,16 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package banco;
+package atividadeRevisao1trimestre;
 
 /**
  *
  * @author tulio
  */
-public class Supervisor extends Funcionario{
-    
-    public Supervisor(String nome) {
-        super(nome);
+public class Turma {
+    private String nomeTurma;
+
+    public Turma(String nomeTurma) {
+        this.nomeTurma = nomeTurma;
+    }
+
+    public String getNomeTurma() {
+        return nomeTurma;
     }
     
     

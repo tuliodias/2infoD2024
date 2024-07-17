@@ -9,20 +9,15 @@ package banco;
  *
  * @author tulio
  */
-public class Funcionario {
+public abstract class Funcionario {
 
     public Funcionario(String nome) {
         this.nome = nome;
     }
 
-    public Funcionario() {
-    }
-
-  
-     
     private String nome, departamento, dataEntrada, RG;
-    private double salario; 
-    private boolean ativo=true;
+    private double salario;
+    private boolean ativo = true;
 
     public String getNome() {
         return nome;
@@ -71,27 +66,29 @@ public class Funcionario {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-    
-    public void bonifica(double aumento){
-        this.salario = this.salario +aumento;
+
+    public void bonifica(double aumento) {
+        this.salario = this.salario + aumento;
     }
-    
-    public void demite(){
+
+    public void demite() {
         this.ativo = false;
     }
-    
-    public void mostra(){
+
+    public void mostra() {
         System.out.println("Dados do Funcionário");
-        System.out.println("Nome: "+this.getNome());
-        System.out.println("Departamento: "+this.getDepartamento());
-        System.out.println("Data Entrada: "+this.getDataEntrada());
-        System.out.println("RG: "+this.getRG());
-        System.out.println("Salário: "+this.getSalario());
-        System.out.println("Ativo: "+(this.isAtivo()==true?"Sim":"Não"));
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Departamento: " + this.getDepartamento());
+        System.out.println("Data Entrada: " + this.getDataEntrada());
+        System.out.println("RG: " + this.getRG());
+        System.out.println("Salário: " + this.getSalario());
+        System.out.println("Ativo: " + (this.isAtivo() == true ? "Sim" : "Não"));
+        System.out.println("Bonificação: "+this.getBonificacao());
         System.out.println("-----------------------------------");
     }
-    
-    
-    
-    
+
+    public double getBonificacao() {
+        return this.salario * 0.10;
+    }
+
 }
