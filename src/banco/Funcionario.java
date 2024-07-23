@@ -83,12 +83,10 @@ public abstract class Funcionario {
         System.out.println("RG: " + this.getRG());
         System.out.println("Salário: " + this.getSalario());
         System.out.println("Ativo: " + (this.isAtivo() == true ? "Sim" : "Não"));
-        System.out.println("Bonificação: "+this.getBonificacao());
+        System.out.println("Bonificação: " + this.getBonificacao());
         System.out.println("-----------------------------------");
     }
 
-    public double getBonificacao() {
-        return this.salario * 0.10;
-    }
+    abstract public double getBonificacao();
 
 }
